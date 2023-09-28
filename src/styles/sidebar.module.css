@@ -1,0 +1,46 @@
+.sidebar {
+    width: 15%;
+    min-width: 120px;
+    padding: 3%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color:  rgb(71, 71, 71);
+    /* margin-top: 150px; */
+  }
+  
+  .title {
+    font-weight: 600;
+    line-height: 20px;
+  }
+  
+  .menu {
+     /* margin-top: 13%; */
+    position: fixed;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+  }
+  
+  .link {
+    color: white;
+    font-size: 18px;
+    line-height: 50px;
+    text-transform: capitalize;
+    text-decoration-line: none
+  }
+  
+  .link:hover {
+    color: rgb(171, 234, 146);
+  }
+  
+  .link.active {
+    color: violet;
+  }
+  
+  .footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+  }

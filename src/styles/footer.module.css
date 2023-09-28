@@ -1,0 +1,42 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 24px;
+    background-color:  rgb(71, 71, 71);
+  }
+  
+  .logo {
+    width: 40px;
+  }
+  
+  .logo a {
+    height: 100%;
+  }
+  
+  .rights {
+    color: rgb(245, 241, 241);
+    font-size: 20px;
+    line-height: 15px;
+  }
+  
+  .rights a {
+    color: violet;
+  }
+  
+  .socials {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .socials img {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .wrapLogo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }

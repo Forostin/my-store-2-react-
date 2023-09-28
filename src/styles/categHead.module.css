@@ -1,0 +1,35 @@
+.sidebar {
+    position: inherit;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    background-color:  rgb(71, 71, 71);
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    justify-content:space-around;
+  }
+  
+  .link {
+    color: white;
+    font-size: 16px;
+    line-height: 17px;
+    text-transform: capitalize;
+    text-decoration-line: none;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+  .link:hover {
+    color: rgb(171, 234, 146);
+  }
+  
+  .link.active {
+    color: violet;
+  }
+  
+ 
