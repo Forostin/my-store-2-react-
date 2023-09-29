@@ -28,13 +28,13 @@ const Cart = () => {
         <>
           <div className={styles.list}>
             {cart.map((item) => {
-              const { title, category, images, price, id, quantity } = item;
+              const { title, category, image, price, id, quantity } = item;
 
               return (
                 <div className={styles.item} key={id}>
                   <div
                     className={styles.image}
-                    style={{ backgroundImage: `url(${images[0]})` }}
+                    style={{ backgroundImage: `url(${image})` }}
                   />
                   <div className={styles.info}>
                     <h3 className={styles.name}>{title}</h3>
