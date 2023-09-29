@@ -10,7 +10,7 @@ import styles from "../../styles/category.module.css"
 const Category = () => {
     const { id } = useParams();
     const { list } = useSelector(({ categories }) => categories);
-//   console.log(list)
+  console.log(list)
     const defaultValues = {
       title: "",
       price_min: 1,
@@ -45,7 +45,8 @@ const Category = () => {
     useEffect(() => {
       if (isLoading) return;
   
-      if (!data.length) return setEnd(true);
+      // if (!data.length) return setEnd(true);
+      if (!data) return setEnd(true);
   
       setItems((_items) => [..._items, ...data]);
     }, [data, isLoading]);

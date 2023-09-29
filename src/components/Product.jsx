@@ -7,18 +7,28 @@ import styles from "../styles/product.module.css"
 import { addItemToCart } from "../Redux/slices/userSlice";
 
 const Product = ( item )=>{
-  const { title, price, images, description } = item;
+  const { title, price, image, description } = item;
 
   const dispatch = useDispatch();
 
   const [currentImage, setCurrentImage] = useState();
   // const [currentSize, setCurrentSize] = useState();
 
-  useEffect(() => {
-    if (!images.length) return;
+  // useEffect(() => {
+  //   if (!images.length) return;
 
-    setCurrentImage(images[0]);
-  }, [images]);
+  //   setCurrentImage(images[0]);
+  // }, [images]);
+
+  // const addToCart = () => {
+  //   dispatch(addItemToCart(item));
+  // };
+
+  useEffect(() => {
+    if (!image) return;
+
+    setCurrentImage(image);
+  }, [image]);
 
   const addToCart = () => {
     dispatch(addItemToCart(item));
@@ -31,7 +41,7 @@ return (
         className={styles.current}
         style={{ backgroundImage: `url(${currentImage})` }}
       />
-      <div className={styles.imagesList}>
+      {/* <div className={styles.imagesList}>
         {images.map((image, i) => (
           <div
             key={i}
@@ -40,13 +50,13 @@ return (
             onClick={() => {setCurrentImage(image)}}
           />
         ))}
-      </div>
+      </div> */}
     </div>
     <div className={styles.info}>
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.price}>{price}$</div>
       <div className={styles.color}>
-        <span>Color:</span> Green
+        <span>Color:</span> Gray
       </div>
       
 
