@@ -19,7 +19,7 @@ const Footer = ()=>{
           </Link>
          </div>
          <div className={styles.rights}> 
-            Developed by Alexander Forostin
+            Developed by Alexander Forostin only for test.
          </div>
          <div className={styles.socials}>
             <a href="https://facebook.com" target="_blank" rel="noreferrer">

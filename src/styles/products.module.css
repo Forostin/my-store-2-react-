@@ -32,7 +32,7 @@
   }
   
   .wrapper {
-    padding: 12px;
+    padding: 18px;
     display: flex;
     flex-direction: column;
     height: calc(100% - 410px);
@@ -40,7 +40,7 @@
   
   .title {
     font-weight: 600;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 18px;
   }
   

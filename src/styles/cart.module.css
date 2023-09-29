@@ -1,6 +1,7 @@
 .cart {
-    width: calc(100% - 324px);
-    padding: 24px 32px;
+    /* width: calc(100% - 324px); */
+    width: 100%;
+    padding: 24px ;
     display: flex;
     flex-direction: column;
   }
@@ -28,7 +29,7 @@
     display: grid;
     grid-template-columns: 100px 2fr 1fr 1.5fr 1fr 16px;
     align-items: center;
-    height: 70px;
+    min-height: 120px;
   }
   
   .image {

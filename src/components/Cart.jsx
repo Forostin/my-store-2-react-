@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart,  removeItemFromCart } from "../Redux/slices/userSlice";
+import { handleClick } from "./Header";
 
 import { sumBy } from "../utils/common";
 import styles from "../styles/cart.module.css"
@@ -18,23 +19,27 @@ const Cart = () => {
     dispatch(removeItemFromCart(id));
   };
 
+
+  let allSum = sumBy(cart.map(({ quantity, price }) => quantity * price))
+
+
   return (
     <section className={styles.cart}>
-      <h2 className={styles.title}>Your cart</h2>
+      <h2 className={styles.title}>Ваш кошик</h2>
 
       {!cart.length ? (
-        <div className={styles.empty}>Here is empty</div>
+        <div className={styles.empty}>Кошик пустий</div>
       ) : (
         <>
           <div className={styles.list}>
             {cart.map((item) => {
-              const { title, category, images, price, id, quantity } = item;
+              const { title, category, image, price, id, quantity } = item;
 
               return (
                 <div className={styles.item} key={id}>
                   <div
                     className={styles.image}
-                    style={{ backgroundImage: `url(${images[0]})` }}
+                    style={{ backgroundImage: `url(${image})` }}
                   />
                   <div className={styles.info}>
                     <h3 className={styles.name}>{title}</h3>
@@ -76,13 +81,13 @@ const Cart = () => {
 
           <div className={styles.actions}>
             <div className={styles.total}>
-              TOTAL PRICE:{" "}
+               ціна разом :{" "}
               <span>
-                {sumBy(cart.map(({ quantity, price }) => quantity * price))} $
+                { Math.round(parseFloat(allSum) * 100) / 100 } $
               </span>
             </div>
 
-            <button className={styles.proceed}>Proceed to checkout</button>
+            <button className={styles.proceed} onClick={handleClick}>Перейти до оформлення замовлення</button>
           </div>
         </>
       )}

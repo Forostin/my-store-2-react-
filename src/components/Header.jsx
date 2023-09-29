@@ -73,7 +73,8 @@ const Header = ()=>{
                       >
                         <div
                           className={styles.image}
-                          style={{ backgroundImage: `url(${images[0]})` }}
+                          // style={{ backgroundImage: `url(${images[0]})` }}
+                          style={{ backgroundImage: `url(${images})` }}
                         />
                         <div className={styles.title}>{title}</div>
                       </Link>

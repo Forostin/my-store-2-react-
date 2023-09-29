@@ -1,7 +1,7 @@
 .sidebar {
-    width: 15%;
-    min-width: 120px;
-    padding: 3%;
+    /* width: 30%; */
+    min-width: 190px;
+    padding: 2%;
     min-height: 400px;
     display: flex;
     flex-direction: column;
@@ -16,14 +16,16 @@
   
   .menu {
      /* margin-top: 13%; */
+     width: 100%;
     position: fixed;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
-    row-gap: 12px;
+    row-gap: 40px;
   }
   
   .link {
+    width: 100%;
     color: white;
     font-size: 18px;
     line-height: 50px;

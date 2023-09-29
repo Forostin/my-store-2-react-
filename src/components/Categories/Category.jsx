@@ -10,7 +10,7 @@ import styles from "../../styles/category.module.css"
 const Category = () => {
     const { id } = useParams();
     const { list } = useSelector(({ categories }) => categories);
-  console.log(list)
+  // console.log(list)
     const defaultValues = {
       title: "",
       price_min: 1,
