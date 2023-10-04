@@ -1,7 +1,9 @@
 .sidebar {
-    width: 15%;
+    /* width: 15%;
     min-width: 120px;
-    padding: 3%;
+    padding: 3%; */
+    min-width: 190px;
+    padding: 2%;
     min-height: 400px;
     display: flex;
     flex-direction: column;
