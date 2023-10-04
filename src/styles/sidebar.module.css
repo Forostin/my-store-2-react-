@@ -1,5 +1,5 @@
 .sidebar {
-    /* width: 30%; */
+   
     min-width: 190px;
     padding: 2%;
     min-height: 400px;
@@ -16,7 +16,7 @@
   
   .menu {
      /* margin-top: 13%; */
-     width: 100%;
+     /* width: 100%; */
     position: fixed;
     margin-top: 40px;
     display: flex;

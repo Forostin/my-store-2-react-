@@ -14,7 +14,7 @@
   .action{
     /* color: rgba(237,28,36,0.4); */
     color: rgba(216, 21, 28, 0.6);
-    font-size:70px;
+    font-size: 70px;
     line-height: 65px;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px black, 0 0 1em red;
