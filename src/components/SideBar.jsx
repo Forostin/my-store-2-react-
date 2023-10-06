@@ -1,27 +1,44 @@
-import React from "react";
-import { useSelector } from "react-redux";
+
+import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import styles from '../styles/sidebar.module.css'
 
+import {getSelectedCategory}  from "../Redux/slices/categorySlice"
+import {useState, useEffect} from "react"
+
 const Sidebar = () => {
    const { list } = useSelector(({ categories }) => categories);
+  //  console.log(list)
+  //  const [userCategory, setCategory] = useState()
+  //  useEffect(()=>{
+  //        fetch('https://fakestoreapi.com/products/categories') 
+  //        .then(res => res.json())
+  //        .then(data => setCategory( data))
+  //        console.log(setCategory)
+  //  },[]);
+  //  console.log(setCategory)
+  //  const userCategory = useSelector((state) => state.categories.category)
+ 
+  //  console.log(userCategory)
+  //  const dispatch = useDispatch()
 
   return (
     <section className={styles.sidebar}>
       <div className={styles.title}>Категоріі</div>
       <nav>
         <ul className={styles.menu}>
-          {list.map(( name , i) => (
-            <li key={i}>
-              
-              <NavLink
+          {list.map(( nameCategory , id, ) => (
+            // ?????????????????????
+            // <li key={id} onClick={() => dispatch(getSelectedCategory(nameCategory))} >
+                 <li key={id}  > 
+              <NavLink 
                 className={({ isActive }) =>
                   `${styles.link} ${isActive ? styles.active : ""}`
                 }
-                to={`/categories/${i}`}
+                to={`/products/category/${nameCategory}`}
               >
-                {name}
+                {nameCategory}
               </NavLink>
             </li>
           ))}
@@ -55,7 +72,9 @@ const Sidebar = () => {
         >
           Terms & Conditions
         </a>
-      </div> */}
+      </div> */}   
+
+
     </section>
   );
 };

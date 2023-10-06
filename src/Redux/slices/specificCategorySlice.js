@@ -3,13 +3,15 @@ import axios from "axios";
 
 import { BASE_URL } from "../../utils/constants";
 
-export const getCategories = createAsyncThunk(
-  "categories/getCategories",
+export const getCategory = createAsyncThunk(
+  "category/getCategory",
   async (_, thunkAPI) => {
     try {
       // const res = await axios('https://fakestoreapi.com/products/category'); 
        const res = await axios('https://fakestoreapi.com/products/categories');   
       // const res = await axios(`${BASE_URL}/categories?offset=0&limit=5`);
+
+      console.log(res.data)
       return res.data;
     } catch (err) {
       console.log(err);
@@ -18,7 +20,7 @@ export const getCategories = createAsyncThunk(
   } 
 );
 
-const categoriesSlice = createSlice({
+const categorySlice = createSlice({
   name: "categories",
   initialState: {
     list: [],
@@ -45,19 +47,18 @@ const categoriesSlice = createSlice({
 // +++++++++++++++++++++
 
   extraReducers: (builder) => {
-    builder.addCase(getCategories.pending, (state) => {
+    builder.addCase(getCategory.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(getCategories.fulfilled, (state, { payload }) => {
+    builder.addCase(getCategory.fulfilled, (state, { payload }) => {
       state.list = payload;
       state.isLoading = false;
     });
-    builder.addCase(getCategories.rejected, (state) => {
+    builder.addCase(getCategory.rejected, (state) => {
       state.isLoading = false;
     });
   },
 });
 
-export const { getSelectedCategory, increment } = categoriesSlice.actions
-export default categoriesSlice.reducer;
-
+export const { getSelectedCategory, increment } = categorySlice.actions
+export default categorySlice.reducer;
