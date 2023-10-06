@@ -157,17 +157,10 @@ import { Link } from 'react-router-dom';
 import styles from '../../styles/products.module.css'
 
 import {ROUTES} from "../../utils/routes"
-import { useSelector } from "react-redux";
-
-// import { useGetProductsQuery } from "../../Redux/slices/apiSlices/apiSlice";
-import Products from "../Products";
-
-// import styles from "../../styles/category.module.css"
 
 const Category = () => {
     const { title } = useParams();
-    // const { list } = useSelector(({ categories }) => categories);
-  
+     
     const [ singleCategory, setSingleCategory ] = useState(null)
   useEffect(()=>{
     async function fetchCategory(){
@@ -179,7 +172,7 @@ const Category = () => {
       }
     }
     fetchCategory()
-  },[])
+  },[singleCategory])
      
     return (
       <section className={styles.products}>

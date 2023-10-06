@@ -9,19 +9,6 @@ import {useState, useEffect} from "react"
 
 const Sidebar = () => {
    const { list } = useSelector(({ categories }) => categories);
-  //  console.log(list)
-  //  const [userCategory, setCategory] = useState()
-  //  useEffect(()=>{
-  //        fetch('https://fakestoreapi.com/products/categories') 
-  //        .then(res => res.json())
-  //        .then(data => setCategory( data))
-  //        console.log(setCategory)
-  //  },[]);
-  //  console.log(setCategory)
-  //  const userCategory = useSelector((state) => state.categories.category)
- 
-  //  console.log(userCategory)
-  //  const dispatch = useDispatch()
 
   return (
     <section className={styles.sidebar}>
@@ -29,9 +16,7 @@ const Sidebar = () => {
       <nav>
         <ul className={styles.menu}>
           {list.map(( nameCategory , id, ) => (
-            // ?????????????????????
-            // <li key={id} onClick={() => dispatch(getSelectedCategory(nameCategory))} >
-                 <li key={id}  > 
+            <li key={id}  > 
               <NavLink 
                 className={({ isActive }) =>
                   `${styles.link} ${isActive ? styles.active : ""}`
@@ -59,22 +44,6 @@ const Sidebar = () => {
 
         </ul>
       </nav>
-
-      {/* <div className={styles.footer}>
-        <a href="/help" target="_blank" className={styles.link}>
-          Help
-        </a>
-        <a
-          href="/terms"
-          target="_blank"
-          className={styles.link}
-          style={{ textDecoration: "underline" }}
-        >
-          Terms & Conditions
-        </a>
-      </div> */}   
-
-
     </section>
   );
 };

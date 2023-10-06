@@ -58,6 +58,6 @@ const categoriesSlice = createSlice({
   },
 });
 
-export const { getSelectedCategory, increment } = categoriesSlice.actions
+export const { getSelectedCategory} = categoriesSlice.actions
 export default categoriesSlice.reducer;
 
