@@ -22,7 +22,6 @@ const categoriesSlice = createSlice({
   name: "categories",
   initialState: {
     list: [],
-    // category: 'electronics',
     isLoading: false,
     
   },

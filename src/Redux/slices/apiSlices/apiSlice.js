@@ -18,11 +18,7 @@ export const apiSlice = createApi({
       providesTags: ["Product"],
     }),
     getProducts: builder.query({
-      // query: (params) => buildUrl("/products", params),
-
-      // ??????????????????
-      query: (params) => buildUrl(`/products/category`, params),
-      
+      query: (params) => buildUrl("/products", params),    
       providesTags: ["Products"],
     }),
   }),

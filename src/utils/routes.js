@@ -1,4 +1,3 @@
-import nameCategory from "../components/SideBar"
 
 export const ROUTES = {
     HOME : '/',

@@ -1,4 +1,4 @@
-import Poster from "../Poster"
+// import Poster from "../Poster"
 import Category from "./Category"
 
 const SingleCategory = ()=>{

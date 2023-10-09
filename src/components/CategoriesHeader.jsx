@@ -11,15 +11,15 @@ const Sidebar = () => {
     <section className={styles.sidebar}>
       <nav>
         <ul className={styles.menu}>
-          {list.map(( name, i ) => (
-            <li key={i}>
+          {list.map(( nameCategory , id ) => (
+            <li key={id}>
               <NavLink
                 className={({ isActive }) =>
                   `${styles.link} ${isActive ? styles.active : ""}`
                 }
-                to={`/categories/${i}`}
+                to={`/products/category/${nameCategory}`}
               >
-                {name}
+                {nameCategory}
               </NavLink>
             </li>
           ))}
