@@ -4,7 +4,7 @@ import {ROUTES} from "../utils/routes"
 import { useEffect,useState } from "react";
 
 import styles from "../styles/product.module.css"
-import { addItemToCart } from "../Redux/slices/userSlice";
+import { addItemToCart , addItemToFavour} from "../Redux/slices/userSlice";
 
 const Product = ( item )=>{
   const { title, price, image, description } = item;
@@ -33,6 +33,9 @@ const Product = ( item )=>{
   const addToCart = () => {
     dispatch(addItemToCart(item));
   };
+  const addToFavour = ()=> {
+    dispatch(addItemToFavour(item))
+  }
 
 return (
     <section className={styles.product}>
@@ -66,7 +69,7 @@ return (
         <button className={styles.add}  onClick={addToCart}>
         Додати до кошика
         </button>
-        <button className={styles.favourite}>Сподобалося</button>
+        <button className={styles.favourite} onClick={addToFavour}>Сподобалося</button>
       </div>
 
       <div className={styles.bottom}>

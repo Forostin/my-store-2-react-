@@ -7,6 +7,7 @@ import SingleProduct from "../SingleProduct";
 import SingleCategory from "../Categories/SingleCategory";
 import Profile from "../Profile"
 import Cart from "../Cart";
+import Favourites from "../Favourites";
 
 
 const appRoutes = ()=>{
@@ -17,6 +18,7 @@ const appRoutes = ()=>{
       <Route path={ROUTES.PROFILE} element={<Profile />}  />
       <Route path={ROUTES.CATEGORY} element={<SingleCategory />}  />
       <Route path={ROUTES.CART} element={<Cart />}  />
+      <Route path={ROUTES.FAVOURITES} element={<Favourites />} />
    </Routes>
     );
 }

@@ -19,8 +19,7 @@ const Header = ()=>{
   const navigate = useNavigate()
   const [searchValue, setSearchValue] = useState('');
 
-  const { currentUser, cart }= useSelector(({user})=> user);
-
+  const { currentUser, cart, favour }= useSelector(({user})=> user);
   // const [values, setValues] = useState({ name: "Guest", avatar: AVATAR });
   const { data, isLoading } = useGetProductsQuery({ title: searchValue });
 
@@ -42,6 +41,11 @@ const Header = ()=>{
   let currentQuantity = null
   cart.map((item) => {
     currentQuantity += item.quantity; 
+  })  
+
+  let currentQuantityFavuor = null
+  favour.map((item) => {
+    currentQuantityFavuor += item.quantity; 
   })  
 
 
@@ -104,17 +108,21 @@ const Header = ()=>{
          </form>
          <div className={styles.containerIcons}>
           <div className={styles.account}>
-            <Link to={ROUTES.HOME} className={styles.favourites}>
+            <Link to={ROUTES.FAVOURITES} className={styles.favourites}>
                <img className={styles.iconHead} src={heart} />
             </Link>
+            { currentQuantityFavuor&&
+               <div className={styles.countFavourites} >{currentQuantityFavuor}</div>
+            }
           </div>
        
           <div className={styles.account}>
             <Link to={ROUTES.CART} className={styles.favourites} >
                 <img className={styles.iconCart} src={cartImag} />
             </Link>
-          <div className={styles.countCart} >{currentQuantity}</div>
-        
+            { currentQuantity&&
+                <div className={styles.countCart} >{currentQuantity}</div>
+            }
           </div>
          </div>    
         </div>
