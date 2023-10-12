@@ -33,12 +33,11 @@ const categoriesSlice = createSlice({
     // },
    
    
-   
-    getSelectedCategory: (state, { payload }) => {
+    // getSelectedCategory: (state, { payload }) => {
       // const listCateg = state.list.filter(({ category : { id } }) => id === payload);
       // const list = state.list.filter(({ category  }) => i === payload);
       // state.category = listCateg.action.payload;
-    },
+    // },
   },
 
 // +++++++++++++++++++++

@@ -1,11 +1,10 @@
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import styles from '../styles/sidebar.module.css'
 
-import {getSelectedCategory}  from "../Redux/slices/categorySlice"
-import {useState, useEffect} from "react"
+
 
 const Sidebar = () => {
    const { list } = useSelector(({ categories }) => categories);
@@ -16,7 +15,11 @@ const Sidebar = () => {
       <nav>
         <ul className={styles.menu}>
           {list.map(( nameCategory , id, ) => (
-            <li key={id}  > 
+
+
+            <li key={id} > 
+
+
               <NavLink 
                 className={({ isActive }) =>
                   `${styles.link} ${isActive ? styles.active : ""}`

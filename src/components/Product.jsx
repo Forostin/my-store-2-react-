@@ -71,7 +71,7 @@ return (
         </button>
         <button className={styles.favourite} onClick={addToFavour}>Сподобалося</button>
       </div>
-
+ 
       <div className={styles.bottom}>
         <Link to={ROUTES.HOME} >Повернутися на головну сторінку</Link>
       </div>

@@ -158,10 +158,12 @@ import styles from '../../styles/products.module.css'
 
 import {ROUTES} from "../../utils/routes"
 
+
 const Category = () => {
     const { title } = useParams();
-     
+  
     const [ singleCategory, setSingleCategory ] = useState(null)
+
   useEffect(()=>{
     async function fetchCategory(){
         try {
@@ -171,15 +173,16 @@ const Category = () => {
         alert(" Помилка при отриманні катєгоріі ")
       }
     }
-    fetchCategory()
-  },[singleCategory])
-     
+      fetchCategory()
+  },[ title ])
+
+ 
     return (
       <section className={styles.products}>
         {singleCategory&&( 
           <div className={styles.list}>
           {singleCategory.map(({id, title, image, price})=>(
-                      <Link to={`/products/${id}`} key={id} className={styles.product} >
+                      <Link to={`/products/${id}`} key={id} className={styles.product}  >
                          <div className={styles.image} 
                              style={{ backgroundImage: `url(${image})` }} 
                          />
@@ -190,7 +193,7 @@ const Category = () => {
                              </div>
                          </div>
                        </Link>
-                    ))
+                    ))              
           }
           </div>      
         )}
