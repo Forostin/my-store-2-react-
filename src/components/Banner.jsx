@@ -1,6 +1,8 @@
 
 import styles from '../styles/banner.module.css'
 import bannerImg from '../assets/images/santa_klaus.jpg'
+import { Link } from 'react-router-dom'
+import { ROUTES } from '../utils/routes'
 
 
 const Banner = ()=>{
@@ -12,8 +14,10 @@ const Banner = ()=>{
              <p className={styles.content}>
                New YEAR 
                <span>SALE</span>
-             </p>        
-             <button className={styles.more}>показати</button>
+             </p>   
+             <Link to={ROUTES.SALE} >   
+                 <button className={styles.more}>показати</button>
+             </Link>  
          </div>
        </div>
         

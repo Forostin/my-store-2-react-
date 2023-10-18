@@ -7,5 +7,6 @@ export const ROUTES = {
     // CATEGORY: '/categories/:id',
     CATEGORY: `/products/category/:title`,
     PRODUCT: '/products/:id',
+    SALE: '/sale',
 
 }

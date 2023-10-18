@@ -1,11 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItemToCart,   removeItemFromFavour, addItemToFavour} from "../Redux/slices/userSlice";
+import { Link } from 'react-router-dom';
+import { removeItemFromFavour, addItemToFavour} from "../Redux/slices/userSlice";
 
-import { sumBy } from "../utils/common";
-import styles from "../styles/cart.module.css"
+import styles from "../styles/favourites.module.css"
 import closeIcon from "../assets/icons/close_delete_icon.png"
-import { handleClick } from "./Header";
 
 
 const Favourites = () => {
@@ -20,7 +19,6 @@ const Favourites = () => {
     dispatch( removeItemFromFavour(id));
   };
 
-  let allSum = sumBy(favour.map(({ quantity, price }) => quantity * price))
 
   return (
     <section className={styles.cart}>
@@ -30,46 +28,28 @@ const Favourites = () => {
         <div className={styles.empty}>Нічого не обрано</div>
       ) : (
         <>
-          <div className={styles.list}>
+          {/* <div className={styles.list}> */}
+          <div >
             {favour.map((item) => {
-              const { title, category, image, price, id, quantity } = item;
+              const { title,  image, price, id, description  } = item;
 
               return (
                 <div className={styles.item} key={id}>
-                  <div
-                    className={styles.image}
-                    style={{ backgroundImage: `url(${image})` }}
+                <Link to={`/products/${id}`} key={id}  >
+                   
+                  <div className={styles.image}
+                        style={{ backgroundImage: `url(${image})` }}
                   />
+                </Link>
                   <div className={styles.info}>
                     <h3 className={styles.name}>{title}</h3>
-                    <div className={styles.category}>{category.name}</div>
+                    <div className={styles.price}>{price}$</div>
+                    <p className={styles.description}>{description }</p>
                   </div>
 
-                  <div className={styles.price}>{price}$</div>
-
-                  {/* <div className={styles.quantity}>
-                    <div
-                      className={styles.minus}
-                      onClick={() =>
-                        changeQuantityFavuor(item, Math.max(1, quantity - 1))
-                      }
-                    > - </div>
-
-                    <span>{quantity}</span>
-
-                    <div
-                      className={styles.plus}
-                      onClick={() =>
-                        changeQuantityFavuor(item, Math.max(1, quantity + 1))
-                      } 
-                    >  +  </div>
-                  </div> */}
-
-                  {/* <div className={styles.total}>{price * quantity} $</div> */}
-
-                  <div
-                    className={styles.close}
-                    onClick={() => removeItem(item.id)}
+                
+                  <div className={styles.close}
+                       onClick={() => removeItem(item.id)}
                   >
                     <img className={styles.icon} src={closeIcon} alt='close' />
                   </div>
@@ -78,17 +58,7 @@ const Favourites = () => {
             })}
           </div>
 
-          {/* <div className={styles.actions}>
-            <div className={styles.total}> */}
-            {/* ціна разом :{" "}
-              <span>
-                {/* {sumBy(cart.map(({ quantity, price }) => quantity * price))} $ */}
-                {/* { Math.round(parseFloat(allSum) * 100) / 100 } $
-              </span>
-            </div>
-            <button className={styles.proceed} onClick={handleClick}>Перейти до оформлення замовлення</button> */}
-          {/* </div> */} 
-        </>
+              </>
       )}
     </section>
   );

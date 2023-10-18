@@ -18,8 +18,11 @@
     row-gap: 8px;
     margin-top: 16px;
     margin-bottom: 24px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
-  
+ 
   .item {
     border-radius: 8px;
     background:  rgb(71, 71, 71);;

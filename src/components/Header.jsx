@@ -90,9 +90,12 @@ const Header = ()=>{
         <form className={styles.form}>
           <div className={styles.info}>
               <div className={styles.user} onClick={handleClick}>
-                 <div className={styles.avatar}>User Avatar</div>
+                 <div className={styles.avatar}>зареєструватися</div>
               </div>
           </div>
+          <Link to={ROUTES.SALE} >   
+              <button>Всі наши товари</button>
+          </Link>
          
            <div className={styles.input}>
             <input
