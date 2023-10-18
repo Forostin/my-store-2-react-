@@ -9,6 +9,7 @@ import Profile from "../Profile"
 import Cart from "../Cart";
 import Favourites from "../Favourites";
 import Sale from "../Sale";
+import EveryItems from "../EveryItems";
 
 
 const appRoutes = ()=>{
@@ -21,6 +22,7 @@ const appRoutes = ()=>{
       <Route path={ROUTES.CART} element={<Cart />}  />
       <Route path={ROUTES.FAVOURITES} element={<Favourites />} />
       <Route path={ROUTES.SALE} element={<Sale />} />
+      <Route path={ROUTES.EVERYITEMS} element={<EveryItems />} />
    </Routes>
     );
 }

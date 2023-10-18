@@ -9,7 +9,7 @@ export const getProducts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       //  const res = await axios('https://fakestoreapi.com/products?offset=0&limit=10');   
-       const res = await axios(`${BASE_URL}/products?offset=0&limit=10`); 
+       const res = await axios(`${BASE_URL}/products?offset=0&limit=10`);  
       // const res = await axios(`${BASE_URL}/products?offset=0&limit=5`);
       // console.log(res.data);
       return res.data;

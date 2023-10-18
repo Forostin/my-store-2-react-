@@ -8,5 +8,6 @@ export const ROUTES = {
     CATEGORY: `/products/category/:title`,
     PRODUCT: '/products/:id',
     SALE: '/sale',
+    EVERYITEMS: '/everyItems',
 
 }

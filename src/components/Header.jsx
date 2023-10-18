@@ -93,7 +93,7 @@ const Header = ()=>{
                  <div className={styles.avatar}>зареєструватися</div>
               </div>
           </div>
-          <Link to={ROUTES.SALE} >   
+          <Link to={ROUTES.EVERYITEMS} >   
               <button>Всі наши товари</button>
           </Link>
          
