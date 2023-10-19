@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import styles from "../styles/everyItems.module.css"
 
-import {useGetProductsQuery} from "../Redux/slices/apiSlices/apiSlice"
+import {useGetProductsQuery, useGetSortProductsQuery} from "../Redux/slices/apiSlices/apiSlice"
 
 const EveryItems= ()=>{
     // const filtered = useSelector((state) => state.products.filtered);
@@ -15,11 +15,13 @@ const EveryItems= ()=>{
     // const [searchValue, setSearchValue] = useState('');
     
     const { data, isLoading } = useGetProductsQuery({ title: '' });
+    // const {list} = useGetSortProductsQuery({price: 'desk'})
+    // console.log(list)
     return (
         <section className={styles.sale}>
           {/* <Poster /> */}
           <p className={styles.title}>наші товари</p>
-          <button>спочатку дешевші</button>
+          <button >спочатку дешевші</button>
           <div className={styles.box}>
               {isLoading
                 ? "Loading"

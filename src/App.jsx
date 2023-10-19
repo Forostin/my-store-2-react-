@@ -1,4 +1,5 @@
 import AppRoutes from "./components/Routes/Routes";
+import { useState } from "react";
 import { useDispatch , useSelector} from "react-redux";
 import { useEffect } from "react";
 import './App.css';
@@ -27,13 +28,24 @@ function App() {
   //   // categories,
   // } = useSelector((state) => state);
   const  categories = useSelector((categories) => categories);
+  const [width, setWidth]   = useState(window.innerWidth);
+  const updateDimensions = () => {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+      window.addEventListener("resize", updateDimensions);
+      return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
 
   return (
     <div className='app'>
       <Header />
       <UserForm />
       <div className="container">
-        <SideBar />
+        { width > 1200 &&
+          <SideBar />
+        }
+       
         <AppRoutes />
       </div>
       {/* <Products products={list} amount={5} title="В тренді" /> */}
