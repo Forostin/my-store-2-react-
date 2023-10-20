@@ -48,29 +48,59 @@ const Header = ()=>{
     currentQuantityFavuor += item.quantity; 
   })  
 // ++++++++++++++++
-const itemInfo = data.filter(obj => {
-  if(obj.title.toLowerCase().includes(searchValue.toLowerCase())){
-    return true
+
+let itemInfo = []
+if(data){
+ itemInfo= data.filter(obj => {
+    if(obj.title.toLowerCase().includes(searchValue.toLowerCase())){
+      return true
+    }
+      return false
   }
-    return false
-}
-)
-.map(({ title, image, id }) => {
-  return (
-    <Link
-      key={id}
-      onClick={() => setSearchValue("")}
-      className={styles.item}
-      to={`/products/${id}`}
-    >
-      <div  
-        className={styles.image}
-        style={{ backgroundImage: `url(${image})` }}
-      />
-      <div className={styles.title}>{title}</div>
-    </Link>
-  );
-})
+  )
+ .map(({ title, image, id }) => {
+    return (
+      <Link
+        key={id}
+        // onClick={() => setSearchValue("")}
+        className={styles.item}
+        to={`/products/${id}`}
+      >
+        <div  
+          className={styles.image}
+          style={{ backgroundImage: `url(${image})` }}
+        />
+        <div className={styles.title}>{title}</div>
+      </Link>
+    );
+  })
+ } 
+
+//  console.log(itemInfo)
+ 
+// const itemInfo = data.filter(obj => {
+//   if(obj.title.toLowerCase().includes(searchValue.toLowerCase())){
+//     return true
+//   }
+//     return false
+// }
+// )
+// .map(({ title, image, id }) => {
+//   return (
+//     <Link
+//       key={id}
+//       onClick={() => setSearchValue("")}
+//       className={styles.item}
+//       to={`/products/${id}`}
+//     >
+//       <div  
+//         className={styles.image}
+//         style={{ backgroundImage: `url(${image})` }}
+//       />
+//       <div className={styles.title}>{title}</div>
+//     </Link>
+//   );
+// })
 
 
 
