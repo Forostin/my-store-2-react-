@@ -47,6 +47,31 @@ const Header = ()=>{
   favour.map((item) => {
     currentQuantityFavuor += item.quantity; 
   })  
+// ++++++++++++++++
+const itemInfo = data.filter(obj => {
+  if(obj.title.toLowerCase().includes(searchValue.toLowerCase())){
+    return true
+  }
+    return false
+}
+)
+.map(({ title, image, id }) => {
+  return (
+    <Link
+      key={id}
+      onClick={() => setSearchValue("")}
+      className={styles.item}
+      to={`/products/${id}`}
+    >
+      <div  
+        className={styles.image}
+        style={{ backgroundImage: `url(${image})` }}
+      />
+      <div className={styles.title}>{title}</div>
+    </Link>
+  );
+})
+
 
 
   return (
@@ -66,24 +91,28 @@ const Header = ()=>{
                 ? "Loading"
                 : !data.length
                 ? "No results"
-                : data.map(({ title, image, id }) => {
-                  // console.log(title)
-                    return (
-                      <Link
-                        key={id}
-                        onClick={() => setSearchValue("")}
-                        className={styles.item}
-                        to={`/products/${id}`}
-                      >
-                        <div  
-                          className={styles.image}
-                          // style={{ backgroundImage: `url(${images[0]})` }}
-                          style={{ backgroundImage: `url(${image})` }}
-                        />
-                        <div className={styles.title}>{title}</div>
-                      </Link>
-                    );
-                  })}
+                : 
+                itemInfo
+
+                // data.map(({ title, image, id }) => {
+                //   return (
+                //     <Link
+                //       key={id}
+                //       onClick={() => setSearchValue("")}
+                //       className={styles.item}
+                //       to={`/products/${id}`}
+                //     >
+                //       <div  
+                //         className={styles.image}
+                //         style={{ backgroundImage: `url(${image})` }}
+                //       />
+                //       <div className={styles.title}>{title}</div>
+                //     </Link>
+                //   );
+                // })
+                
+                
+                }
             </div>
           )}
         

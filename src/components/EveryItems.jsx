@@ -9,14 +9,10 @@ import styles from "../styles/everyItems.module.css"
 import {useGetProductsQuery, useGetSortProductsQuery} from "../Redux/slices/apiSlices/apiSlice"
 
 const EveryItems= ()=>{
-    // const filtered = useSelector((state) => state.products.filtered);
-    // const list = useSelector((state) => state.products.list)
-
-    // const [searchValue, setSearchValue] = useState('');
+   
     
     const { data, isLoading } = useGetProductsQuery({ title: '' });
-    // const {list} = useGetSortProductsQuery({price: 'desk'})
-    // console.log(list)
+
     return (
         <section className={styles.sale}>
           {/* <Poster /> */}
@@ -45,7 +41,6 @@ const EveryItems= ()=>{
                     );
                   })}
             </div>
-          {/* <Products  products={list}/> */}
         </section>
     )
 }
