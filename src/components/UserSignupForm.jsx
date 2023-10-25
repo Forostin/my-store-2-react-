@@ -1,5 +1,3 @@
-
-
 import { useDispatch } from "react-redux";
 import { createUser } from "../Redux/slices/userSlice";
 import { useState } from "react";
@@ -33,9 +31,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.close} onClick={closeForm}>
-        {/* <svg className={styles.icon}> */}
-          <img  src={closeButton} className={styles.icon} alt="" />
-        {/* </svg> */}
+               <img  src={closeButton} className={styles.icon} alt="" />
       </div>
 
       <div className={styles.title}>Sign Up</div>
@@ -76,18 +72,6 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
             required
           />
         </div>
-
-        {/* <div className={styles.group}>
-          <input
-            type="avatar"
-            placeholder="Your avatar"
-            name="avatar"
-            value={values.avatar}
-            autoComplete="off"
-            onChange={handleChange}
-            required
-          />
-        </div> */}
 
         <div
           className={styles.link}

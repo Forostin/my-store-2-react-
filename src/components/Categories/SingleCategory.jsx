@@ -1,13 +1,13 @@
 // import Poster from "../Poster"
-import Category from "./Category"
+// import Category from "./Category"
 
-const SingleCategory = ()=>{
-    return (
-        <>
-          {/* <Poster /> */}
-          <Category />
-        </>
-    )
-}
+// const SingleCategory = ()=>{
+//     return (
+//         <>
+//           {/* <Poster /> */}
+//           <Category />
+//         </>
+//     )
+// }
 
-export default SingleCategory
+// export default SingleCategory

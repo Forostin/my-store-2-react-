@@ -12,18 +12,7 @@ const Product = ( item )=>{
   const dispatch = useDispatch();
 
   const [currentImage, setCurrentImage] = useState();
-  // const [currentSize, setCurrentSize] = useState();
-
-  // useEffect(() => {
-  //   if (!images.length) return;
-
-  //   setCurrentImage(images[0]);
-  // }, [images]);
-
-  // const addToCart = () => {
-  //   dispatch(addItemToCart(item));
-  // };
-
+  
   useEffect(() => {
     if (!image) return;
 
@@ -44,16 +33,7 @@ return (
         className={styles.current}
         style={{ backgroundImage: `url(${currentImage})` }}
       />
-      {/* <div className={styles.imagesList}>
-        {images.map((image, i) => (
-          <div
-            key={i}
-            className={styles.image}
-            style={{ backgroundImage: `url(${image})` }}
-            onClick={() => {setCurrentImage(image)}}
-          />
-        ))}
-      </div> */}
+     
     </div>
     <div className={styles.info}>
       <h1 className={styles.title}>{title}</h1>
@@ -62,7 +42,6 @@ return (
         <span>Color:</span> Gray
       </div>
       
-
       <p className={styles.description}>{description}</p>
 
       <div className={styles.actions}>
@@ -79,6 +58,5 @@ return (
   </section>
      )
  }
- 
  
  export default Product

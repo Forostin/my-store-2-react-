@@ -6,8 +6,6 @@ import './App.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer"
 import SideBar from "./components/SideBar";
-import Products from "./components/Products";
-import Categories from "./components/Categories/Categories";
 
 import {getCategories} from "./Redux/slices/categorySlice"
 import { getProducts } from "./Redux/slices/productsSlice";
@@ -22,12 +20,7 @@ function App() {
     dispatch(getProducts());
   }, [dispatch]);
 
-  // const {list} = useSelector((products) => products);
-  // const {
-  //   products: { list },
-  //   // categories,
-  // } = useSelector((state) => state);
-  const  categories = useSelector((categories) => categories);
+ 
   const [width, setWidth]   = useState(window.innerWidth);
   const updateDimensions = () => {
     setWidth(window.innerWidth);
@@ -48,10 +41,7 @@ function App() {
        
         <AppRoutes />
       </div>
-      {/* <Products products={list} amount={5} title="В тренді" /> */}
-      {/* <Categories products={categories} title="Категоріі" /> */}
-      <Footer />
-     
+        <Footer />
     </div>
      );
 }

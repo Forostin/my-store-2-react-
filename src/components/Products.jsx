@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from '../styles/products.module.css';
 
 const Products = ({title, products = [], style={}, amount})=>{    
-    const list = products.filter((_, i)=> i < amount) 
+    // const list = products.filter((_, i)=> i < amount) 
     // console.log(list)
     return (
         <section className={styles.products} style={style}>

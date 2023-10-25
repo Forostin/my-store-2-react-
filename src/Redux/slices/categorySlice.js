@@ -7,9 +7,8 @@ export const getCategories = createAsyncThunk(
   "categories/getCategories",
   async (_, thunkAPI) => {
     try {
-      // const res = await axios('https://fakestoreapi.com/products/category'); 
-       const res = await axios('https://fakestoreapi.com/products/categories');   
-      // const res = await axios(`${BASE_URL}/categories?offset=0&limit=5`);
+        // const res = await axios('https://fakestoreapi.com/products/categories');   
+      const res = await axios(`${BASE_URL}/products/categories`);
       return res.data;
     } catch (err) {
       console.log(err);
@@ -26,21 +25,10 @@ const categoriesSlice = createSlice({
     
   },
  
-//  +++++++++++++++
-  reducers: {
-    // filterByPrice: (state) => {
-    //   state.filtered = state.list.filter(({price}) => price < 60 );
-    // },
-   
-   
-    // getSelectedCategory: (state, { payload }) => {
-      // const listCateg = state.list.filter(({ category : { id } }) => id === payload);
-      // const list = state.list.filter(({ category  }) => i === payload);
-      // state.category = listCateg.action.payload;
-    // },
-  },
 
-// +++++++++++++++++++++
+  reducers: {
+  
+  },
 
   extraReducers: (builder) => {
     builder.addCase(getCategories.pending, (state) => {

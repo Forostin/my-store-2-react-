@@ -48,10 +48,6 @@ export const loginUser = createAsyncThunk(
   } 
 );
 
-// const addCurrentUser = (state, { payload }) => {
-//   state.currentUser = payload;
-// };
-
 
 const userSlice = createSlice({
   name: "user",
@@ -111,9 +107,6 @@ reducers: {
   }
 },
   extraReducers: (builder) => {
-    // builder.addCase(getCategories.pending, (state) => {
-    //   state.isLoading = true;
-    // });
     builder.addCase(createUser.fulfilled, (state, { payload }) => {
       state.currentUser = payload; 
     });
@@ -123,10 +116,7 @@ reducers: {
     builder.addCase(updateUser.fulfilled, (state, { payload }) => {
       state.currentUser = payload; 
     });
-    // builder.addCase(getCategories.rejected, (state) => {
-    //   state.isLoading = false;
-    // });
-  }
+   }
 });
 
 export const { addItemToCart ,

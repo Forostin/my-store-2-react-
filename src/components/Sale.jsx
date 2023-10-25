@@ -4,7 +4,6 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 
 import styles from "../styles/sale.module.css"
 
-
 const Sale = ()=>{
     const filtered = useSelector((state) => state.products.filtered);
     return (

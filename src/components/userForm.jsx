@@ -6,7 +6,6 @@ import { toggleForm, toggleFormType } from "../Redux/slices/userSlice"
 
 import styles from "../styles/user.module.css"
 
-
 const UserForm = () => {
     const dispatch = useDispatch()
     const { showForm , formType} = useSelector(({user})=> user)

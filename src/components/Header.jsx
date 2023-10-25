@@ -25,7 +25,6 @@ const Header = ()=>{
 
   useEffect(() => {
     if (!currentUser) return;
-
   //   // setValues(currentUser);
   }, [currentUser]);
 
@@ -47,15 +46,15 @@ const Header = ()=>{
   favour.map((item) => {
     currentQuantityFavuor += item.quantity; 
   })  
-// ++++++++++++++++
 
-let itemInfo = []
-if(data){
- itemInfo= data.filter(obj => {
-    if(obj.title.toLowerCase().includes(searchValue.toLowerCase())){
-      return true
-    }
-      return false
+
+  let itemInfo = []
+  if(data){
+   itemInfo= data.filter(obj => {
+      if(obj.title.toLowerCase().includes(searchValue.toLowerCase())){
+        return true
+      }
+        return false
   }
   )
  .map(({ title, image, id }) => {
@@ -74,35 +73,7 @@ if(data){
       </Link>
     );
   })
- } 
-
-//  console.log(itemInfo)
- 
-// const itemInfo = data.filter(obj => {
-//   if(obj.title.toLowerCase().includes(searchValue.toLowerCase())){
-//     return true
-//   }
-//     return false
-// }
-// )
-// .map(({ title, image, id }) => {
-//   return (
-//     <Link
-//       key={id}
-//       onClick={() => setSearchValue("")}
-//       className={styles.item}
-//       to={`/products/${id}`}
-//     >
-//       <div  
-//         className={styles.image}
-//         style={{ backgroundImage: `url(${image})` }}
-//       />
-//       <div className={styles.title}>{title}</div>
-//     </Link>
-//   );
-// })
-
-
+   } 
 
   return (
     <div className={styles.wrap}>
@@ -122,26 +93,7 @@ if(data){
                 : !data.length
                 ? "No results"
                 : 
-                itemInfo
-
-                // data.map(({ title, image, id }) => {
-                //   return (
-                //     <Link
-                //       key={id}
-                //       onClick={() => setSearchValue("")}
-                //       className={styles.item}
-                //       to={`/products/${id}`}
-                //     >
-                //       <div  
-                //         className={styles.image}
-                //         style={{ backgroundImage: `url(${image})` }}
-                //       />
-                //       <div className={styles.title}>{title}</div>
-                //     </Link>
-                //   );
-                // })
-                
-                
+                itemInfo                                
                 }
             </div>
           )}

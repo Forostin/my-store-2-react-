@@ -1,4 +1,3 @@
-
 export const ROUTES = {
     HOME : '/',
     CART : '/cart',
@@ -9,5 +8,4 @@ export const ROUTES = {
     PRODUCT: '/products/:id',
     SALE: '/sale',
     EVERYITEMS: '/everyItems',
-
 }

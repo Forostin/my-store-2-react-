@@ -31,9 +31,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.close} onClick={closeForm}>
-        {/* <svg className={styles.icon}> */}
-          <img  src={closeButton} className={styles.icon} />
-        {/* </svg> */}
+                <img  src={closeButton} className={styles.icon} />
       </div>
 
       <div className={styles.title}>Log In</div>
@@ -62,9 +60,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
             required
           />
         </div>
-       
       
-       
         <div
           onClick={() => toggleCurrentFormType("signup")}
           className={styles.link}

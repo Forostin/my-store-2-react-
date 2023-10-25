@@ -3,7 +3,6 @@ import styles from '../styles/home.module.css';
 import imgPoster from "../assets/images/image_computer.png"
 import { handleClick } from './Header';
 
-
 const Poster = ()=>{
     return(
         <section className={styles.home}>
@@ -19,7 +18,6 @@ const Poster = ()=>{
              </div>
            </div>
         </section>
-
     )
 }
 export default Poster

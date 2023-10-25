@@ -10,7 +10,6 @@ import { ROUTES } from "../utils/routes";
 
 const Footer = ()=>{
     return (
-    <>
        <section className={styles.footer}>
          <div > 
           <Link to={ROUTES.HOME}  className={styles.wrapLogo}> 
@@ -32,7 +31,6 @@ const Footer = ()=>{
             </a>
          </div>
        </section>
-    </>
     );
   }
   

@@ -6,14 +6,9 @@ import { removeItemFromFavour, addItemToFavour} from "../Redux/slices/userSlice"
 import styles from "../styles/favourites.module.css"
 import closeIcon from "../assets/icons/close_delete_icon.png"
 
-
 const Favourites = () => {
   const dispatch = useDispatch();
   const { favour } = useSelector(({ user }) => user);
-
-  const changeQuantityFavuor = (item, quantity) => {
-    dispatch(addItemToFavour({ ...item, quantity }));
-  };
 
   const removeItem = (id) => {
     dispatch( removeItemFromFavour(id));
@@ -27,8 +22,6 @@ const Favourites = () => {
       {!favour.length ? (
         <div className={styles.empty}>Нічого не обрано</div>
       ) : (
-        <>
-          {/* <div className={styles.list}> */}
           <div >
             {favour.map((item) => {
               const { title,  image, price, id, description  } = item;
@@ -46,8 +39,7 @@ const Favourites = () => {
                     <div className={styles.price}>{price}$</div>
                     <p className={styles.description}>{description }</p>
                   </div>
-
-                
+    
                   <div className={styles.close}
                        onClick={() => removeItem(item.id)}
                   >
@@ -57,12 +49,9 @@ const Favourites = () => {
               );
             })}
           </div>
-
-              </>
       )}
     </section>
   );
 };
-
 
 export default Favourites;

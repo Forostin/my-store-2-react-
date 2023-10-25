@@ -1,14 +1,11 @@
-
 import styles from '../styles/banner.module.css'
 import bannerImg from '../assets/images/santa_klaus.jpg'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../utils/routes'
 
-
 const Banner = ()=>{
     return (
       <section className={styles.banner}>
-
        <div className={styles.animation}>
          <div className={styles.snowflake}>
              <p className={styles.content}>
