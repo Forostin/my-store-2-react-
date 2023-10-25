@@ -10,8 +10,7 @@ export const getProducts = createAsyncThunk(
     try {
       //  const res = await axios('https://fakestoreapi.com/products?offset=0&limit=10');   
        const res = await axios(`${BASE_URL}/products?offset=0&limit=10`);  
-      // const res = await axios(`${BASE_URL}/products?offset=0&limit=5`);
-      // console.log(res.data);
+          // console.log(res.data);
       return res.data;
     } catch (err) {
       console.log(err);
@@ -39,6 +38,7 @@ const productsSlice = createSlice({
       const list = state.list.filter(({ category: { id } }) => id === payload);
       state.related = shuffle(list);
     },
+   
   },
   
   extraReducers: (builder) => {

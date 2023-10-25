@@ -62,7 +62,7 @@ if(data){
     return (
       <Link
         key={id}
-        // onClick={() => setSearchValue("")}
+        onClick={() => setSearchValue("")}
         className={styles.item}
         to={`/products/${id}`}
       >

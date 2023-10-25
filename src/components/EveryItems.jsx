@@ -1,30 +1,35 @@
-// import Poster from "../components/Poster";
-import Products from "./Products"
-import React, { useState } from "react";
-import { useSelector } from "react-redux/es/hooks/useSelector";
+import Banner from "../components/Banner"
+import React from "react";
 import { Link } from "react-router-dom";
 
 import styles from "../styles/everyItems.module.css"
 
-import {useGetProductsQuery, useGetSortProductsQuery} from "../Redux/slices/apiSlices/apiSlice"
+import {useGetProductsQuery} from "../Redux/slices/apiSlices/apiSlice"
 
-const EveryItems= ()=>{
-   
-    
+const EveryItems= ()=>{   
     const { data, isLoading } = useGetProductsQuery({ title: '' });
-
+   
+    let arrayForSort = data
+    let sortData = []
+  if(arrayForSort){
+     arrayForSort = data.slice(0)
+     sortData = arrayForSort.sort(function(a, b){
+        return a.price - b.price;
+    })
+  }
+  
     return (
         <section className={styles.sale}>
-          {/* <Poster /> */}
+          <Banner />
           <p className={styles.title}>наші товари</p>
-          <button >спочатку дешевші</button>
+          <p >спочатку дешевші</p>
           <div className={styles.box}>
               {isLoading
                 ? "Loading"
                 : !data.length
                 ? "No results"
-                : data.map(({ title, image, id, price}) => {
-                   return (
+                : sortData.map(({ title, image, id, price}) => {
+                    return (
                       <Link
                         key={id}
                         // onClick={() => setSearchValue("")}

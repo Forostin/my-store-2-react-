@@ -9,19 +9,13 @@ import styles from "../styles/home.module.css"
 import { filterByPrice } from "../Redux/slices/productsSlice";
 
 const Home = ()=>{
-  // const {list, filtered} = useSelector((products) => products);
   const list = useSelector((state) => state.products.list);
   const filtered = useSelector((state) => state.products.filtered);
   const dispatch = useDispatch();
-  // const {
-  //   products: { list, filtered },
-  //   categories,
-  // } = useSelector((state) => state);
-
+  
 
   useEffect(() => {
     if (list.length){
-
     dispatch(filterByPrice());
     }
   }, [ dispatch, list.length ]);
