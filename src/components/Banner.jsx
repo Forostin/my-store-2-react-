@@ -24,7 +24,7 @@ const Banner = ()=>{
                    заощаджуйте зі знижкою до
                    <span> 40% </span>
                 </p>
-        </div>
+           </div>
         </div>
         
       </section>

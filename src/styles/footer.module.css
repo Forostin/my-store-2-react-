@@ -1,4 +1,8 @@
+
+  
+
 .footer {
+  width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,16 +22,22 @@
   .rights {
     color: rgb(245, 241, 241);
     font-size: 20px;
-    line-height: 15px;
+    line-height: 25px;
+    margin: 0px 25px 0px 25px;
   }
+  @media (max-width: 500px) {
+    .rights{
+      font-size: 15px;
+      color: aqua;
+    }
+  } 
   
-  .rights a {
-    color: violet;
-  }
-  
+   
   .socials {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
+    /* width: 150px */
   }
   
   .socials img {
@@ -39,4 +49,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+  .icon{
+    width: 34px;
+    height: 34px;
   }

@@ -1,16 +1,16 @@
 import React, {useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ROUTES } from "../utils/routes";
+import { useDispatch, useSelector } from "react-redux";
+
+import { toggleForm } from "../Redux/slices/userSlice"
+import { useGetProductsQuery } from "../Redux/slices/apiSlices/apiSlice";
+import CategoriesHeader from "./CategoriesHeader";
 
 import styles from '../styles/header.module.css'
 import logo from "../assets/icons/free-icon-letter-a-5906711.png";
 import heart from "../assets/icons/icon-2445095_640.png";
 import cartImag from "../assets/icons/shopping-cart-297750_640.png"
-
-import CategoriesHeader from "./CategoriesHeader";
-import { ROUTES } from "../utils/routes";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleForm } from "../Redux/slices/userSlice"
-import { useGetProductsQuery } from "../Redux/slices/apiSlices/apiSlice";
 
 export let handleClick = null
 
@@ -105,7 +105,7 @@ const Header = ()=>{
               </div>
           </div>
           <Link to={ROUTES.EVERYITEMS} >   
-              <button>Всі наши товари</button>
+              <button className={styles.buttonItems}>Всі наши товари</button>
           </Link>
          
            <div className={styles.input}>

@@ -12,7 +12,7 @@ const Sidebar = () => {
       <nav>
         <ul className={styles.menu}>
           {list.map(( nameCategory , id ) => (
-            <li key={id}>
+            <li key={id} >
               <NavLink
                 className={({ isActive }) =>
                   `${styles.link} ${isActive ? styles.active : ""}`

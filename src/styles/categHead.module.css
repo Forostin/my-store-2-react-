@@ -14,6 +14,7 @@
     justify-content:space-around;
   }
   
+  
   .link {
     color: white;
     font-size: 18px;
@@ -23,6 +24,17 @@
     margin-left: 25px;
     margin-right: 25px;
   }
+
+  @media (max-width: 690px) {
+    .menu{
+      display: flex;
+      flex-direction: column;
+    }
+    .link {
+      margin-top: 20px;
+      line-height: 27px;
+    }
+  } 
   
   .link:hover {
     color: rgb(171, 234, 146);
@@ -31,5 +43,6 @@
   .link.active {
     color: violet;
   }
+  
   
  

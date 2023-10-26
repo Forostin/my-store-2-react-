@@ -1,10 +1,10 @@
 .banner {
   display: flex;
   min-height: 400px;
-  /* background-color:  rgb(71, 71, 71); */
-  /* background-color:  rgb(22, 11, 140); */
   margin-top: 40px;
 }
+
+
 .blockImage{
   position: relative;
   width: 50%;
@@ -21,7 +21,6 @@
 .animation{
   width: 50%;
   /* padding: 20px; */
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,5 +115,18 @@
     right: -25px;
     bottom: -25px;
     /* background: url(../images/devices.png) no-repeat center/contain; */
+  }
+  
+  @media (max-width: 850px) {
+    .banner{
+      display: flex;
+      flex-direction: column;
+    }
+    .blockImage{
+      width: 100%;
+    }
+    .animation{
+      width: 100%;
+    }
   }
   

@@ -2,6 +2,11 @@
     width: 100%;
     min-height: 100px;
     padding: 25px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-content: center;
+    
   }
   
   .list {
@@ -12,12 +17,22 @@
     flex-wrap: wrap;
   }
   
+ @media (max-width: 520px) {
+    .list {
+     justify-content: center;
+    } 
+    .products{
+      padding: 0px;
+    }
+ }   
+
   .product {
     /* background: var(--bg); */
     background-color: rgb(71, 71, 71);
     border-radius: 8px;
     overflow: hidden;
     width: calc(100% / 5 - 20px);
+    min-width: 200px;
   }
   
   .product:nth-child(5n) {

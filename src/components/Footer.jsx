@@ -22,11 +22,11 @@ const Footer = ()=>{
          </div>
          <div className={styles.socials}>
             <a href="https://facebook.com" target="_blank" rel="noreferrer">
-               <img className="icon" src={iconFb}  alt='stuff'>
+               <img className={styles.icon} src={iconFb}  alt='stuff'>
                </img>               
             </a>
             <a href="https://youtube.com" target="_blank" rel="noreferrer">
-               <img className="icon" src={iconYt}  alt='stuff'>
+               <img className={styles.icon} src={iconYt}  alt='stuff'>
                </img>               
             </a>
          </div>
