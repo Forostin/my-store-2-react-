@@ -38,14 +38,14 @@ const Header = ()=>{
   };
 
   let currentQuantity = null
-  cart.map((item) => {
-    currentQuantity += item.quantity; 
-  })  
+  cart.map((item) => 
+    currentQuantity += item.quantity
+  )  
 
   let currentQuantityFavuor = null
-  favour.map((item) => {
-    currentQuantityFavuor += item.quantity; 
-  })  
+  favour.map((item) => 
+    currentQuantityFavuor += item.quantity
+  )  
 
 
   let itemInfo = []
