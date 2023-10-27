@@ -134,3 +134,19 @@
   cursor: not-allowed;
   /* background: var(--bg); */
 }
+
+@media (max-width: 850px) {
+  .product{
+    flex-wrap: wrap;
+  }   
+  .info{
+    margin-top: 10px;
+  }
+ .bottom{
+  margin: 10px;
+ }
+ .current{
+  width: 250px;
+  height: 350px;
+ }
+}

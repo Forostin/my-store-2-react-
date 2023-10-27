@@ -45,3 +45,10 @@
     color: red;
     margin: 15px;
   } 
+
+  @media (max-width: 940px) {
+  .title{
+      font-size: 17px;
+      line-height: 17px;
+    }
+  }

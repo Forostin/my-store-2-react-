@@ -105,14 +105,14 @@ const Header = ()=>{
               </div>
           </div>
           <Link to={ROUTES.EVERYITEMS} >   
-              <button className={styles.buttonItems}>Всі наши товари</button>
+              <button className={styles.buttonItems}>Всі наші товари</button>
           </Link>
          
            <div className={styles.input}>
             <input
               type="search"
               name="search"
-              placeholder="Search for anyting..."
+              placeholder="Пошук товарів..."
               autoComplete="off"
               onChange={handleSearch}
               value={searchValue}
@@ -123,7 +123,7 @@ const Header = ()=>{
          <div className={styles.containerIcons}>
           <div className={styles.account}>
             <Link to={ROUTES.FAVOURITES} className={styles.favourites}>
-               <img className={styles.iconHead} src={heart} />
+               <img className={styles.iconHead} src={heart} alt=""/>
             </Link>
             { currentQuantityFavuor&&
                <div className={styles.countFavourites} >{currentQuantityFavuor}</div>
@@ -132,7 +132,7 @@ const Header = ()=>{
        
           <div className={styles.account}>
             <Link to={ROUTES.CART} className={styles.favourites} >
-                <img className={styles.iconCart} src={cartImag} />
+                <img className={styles.iconCart} src={cartImag} alt="" />
             </Link>
             { currentQuantity&&
                 <div className={styles.countCart} >{currentQuantity}</div>

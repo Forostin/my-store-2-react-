@@ -144,7 +144,7 @@ button {
 }
 
 button:hover {
-  background: gray;
+  background: rgb(145, 93, 243);
 }
 
 h2 {

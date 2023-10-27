@@ -62,5 +62,22 @@
    max-width: 1000px;
   }
   
-
-  
+  @media (max-width: 1635px) {
+    .name{
+      margin: 10px;
+    }
+  }
+  @media (max-width: 1200px) {
+    .item{
+      margin-left: 0px;
+    }
+  }
+  @media (max-width: 400px) {
+    .image{
+     width: 200px;
+     height: 300px;
+    }
+    .item{
+      padding: 10px;
+    }
+  }

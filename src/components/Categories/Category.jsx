@@ -46,9 +46,9 @@ const Category = () => {
           }
           </div>      
         )}
-        <button className={styles.buttonHome}>
-           <Link to={ROUTES.HOME} >Повернутися на головну сторінку</Link>
-        </button>
+        <Link to={ROUTES.HOME} >
+            <button className={styles.buttonHome}>Повернутися на головну сторінку</button>
+        </Link>
       </section>
     );
   };

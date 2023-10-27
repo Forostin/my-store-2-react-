@@ -22,9 +22,9 @@ const Home = ()=>{
 
   return (
     <div className={styles.wrap}>
-         <Poster />
-         <Products products={list} amount={5} title="популярні товари" />
          <Banner />   
+         <Products products={list} amount={5} title="популярні товари" />
+         <Poster />
          <Products products={filtered} amount={5} title="акційні товари менше ніж 60$" />
     </div>
     );
